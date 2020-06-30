@@ -1,0 +1,2 @@
+{{ range . }} The Square of {{ printf "%d" .Number }} is {{ printf "%d" .Square }}
+{{ end }}
