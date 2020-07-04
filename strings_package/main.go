@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	s "strings"
 	"unicode"
 )
@@ -57,4 +58,13 @@ func main() {
 		return !unicode.IsLetter(c)
 	}
 	f("TrimFunc: %s\n", s.TrimFunc("123 abc ABC \t .", trimFunction))
+
+	str := s.NewReader("this is an error!!")
+	fmt.Println("str length: ", str.Len())
+	n, err := str.WriteTo(os.Stdout)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Printf("\nwrote %d bytes to Stdout\n", n)
 }
