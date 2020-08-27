@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	// A rune is an int32 value, and therefore a Go type, that is used for representing a Unicode code point.
